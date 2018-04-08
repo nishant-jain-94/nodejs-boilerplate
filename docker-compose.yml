@@ -1,0 +1,15 @@
+version: '3'
+services:
+  backend:
+    build:
+      context: .
+    environment:
+      - MONGODB_URL=mongodb://mongodb
+      - APP=NODEJS_BOILERPLATEs
+      - PORT=8080
+    ports:
+      - 8080:8080
+  mongodb:
+    image: mvertes/alpine-mongo
+    ports:
+      - 27017:27017

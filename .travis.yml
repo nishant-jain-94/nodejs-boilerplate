@@ -1,0 +1,22 @@
+language: node_js
+notifications:
+  slack: theselftalk:EHiDWYYgq34Y172TrHTqA16W
+node_js:
+  - stable
+services:
+  - docker
+before_script:
+  - sudo apt-get install zip
+  - docker-compose -f docker-compose.test.yml up --build -d
+install:
+  - yarn run install
+script:
+  - yarn run test
+  - zip -qr build.zip . *.git* node_modules/\*
+after_success:
+  - yarn run coverage
+deploy:
+  provider: releases
+  api_key: ${GITHUB_OAUTH_TOKEN}
+  file: build.zip
+  skip_cleanup: true

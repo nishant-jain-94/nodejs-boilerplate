@@ -1,0 +1,8 @@
+# Ignore node_modules
+node_modules/
+
+# Ignore all the log files
+*.log
+
+# Ignore all the files related to the editor
+.vscode

@@ -1,0 +1,23 @@
+swagger: "2.0"
+info:
+  title: API
+  description: API Description
+  version: 1.0
+host: api.example.com
+basePath: /v1
+schemes:
+  - http
+  - https
+paths:
+  /ping:
+    get:
+      summary: Returns a pong
+      description: A pong is sent by the server if the server is alive
+      produces:
+        - application/text
+      responses:
+        200:
+          description: OK
+          schema:
+            type: string
+            example: pong

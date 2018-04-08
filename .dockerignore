@@ -1,0 +1,8 @@
+# Ignore all the node_modules
+node_modules/
+
+# Ignore the .git folder and .gitignore file
+.git*
+
+# Ignore the all the log files generated
+*.log
